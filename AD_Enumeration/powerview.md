@@ -137,7 +137,7 @@ ___
 | `Find-InterestingDomainShareFile`| Busca archivos que coincidan con criterios específicos en recursos compartidos                  |
 | `Find-LocalAdminAccess`          | Encuentre máquinas en el dominio local donde el usuario tiene acceso de administrador local     |
 
-| **Confianza del dominio:** |                                                                                          |
+| **Relaciones de Confianza:** |                                                                                          |
 | :------------------------------- | :---------------------------------------------------------------------------------------------- |
 | `Get-DomainTrust`                | Devuelve confianzas de dominio para el dominio actual o un dominio específico                   |
 | `Get-ForestTrust`                | Devuelve todos los fideicomisos de bosque para el bosque actual o un bosque especificado       |
