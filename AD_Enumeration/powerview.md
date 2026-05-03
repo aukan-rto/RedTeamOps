@@ -94,6 +94,7 @@ Cambio contraseña:
 Set-DomainUserPassword -Identity blake -AccountPassword (ConvertTo-SecureString 'Password123!' -AsPlainText -Force ) -Verbose
 ```
 
+___
 
 
 
