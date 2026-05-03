@@ -104,7 +104,7 @@ ___
 | `ConvertTo-SID`                  | Convertir un nombre de usuario o grupo a su valor SID                                           |
 | `Get-DomainSPNTicket`            | Solicita el ticket de Kerberos para una cuenta de nombre principal de servicio (SPN) especificada |
 
-| **Funciones de dominio/LDAP:**    |                                                                                                 |
+| **Dominio/LDAP:**    |                                                                                                 |
 | :------------------------------- | :---------------------------------------------------------------------------------------------- |
 | `Get-Domain`                     | Devolverá el objeto AD para el dominio actual (o especificado)                                  |
 | `Get-DomainController`           | Devuelve una lista de los controladores de dominio para el dominio especificado                 |
@@ -117,12 +117,12 @@ ___
 | `Get-DomainFileServer`           | Devuelve una lista de servidores que probablemente funcionen como servidores de archivos.       |
 | `Get-DomainDFSShare`             | Devuelve una lista de todos los sistemas de archivos distribuidos para el dominio actual        |
 
-| **Funciones de GPO:**            |                                                                                                 |
+| **GPO:**            |                                                                                                 |
 | :------------------------------- | :---------------------------------------------------------------------------------------------- |
 | `Get-DomainGPO`                  | Devolverá todos los GPO u objetos GPO específicos en AD                                         |
 | `Get-DomainPolicy`               | Devuelve la política de dominio predeterminada o la política de controlador de dominio          |
 
-| **Funciones de enumeración por computadora:** |                                                                                          |
+| **Enumeración por computadora:** |                                                                                          |
 | :------------------------------- | :---------------------------------------------------------------------------------------------- |
 | `Get-NetLocalGroup`              | Enumera grupos locales en la máquina local o remota                                             |
 | `Get-NetLocalGroupMember`        | Enumera los miembros de un grupo local específico.                                              |
@@ -130,14 +130,14 @@ ___
 | `Get-NetSession`                 | Devolverá información de sesión para la máquina local (o remota)                                |
 | `Test-AdminAccess`               | Prueba si el usuario actual tiene acceso administrativo a la máquina local                      |
 
-| **Funciones 'Meta' roscadas:**    |                                                                                                 |
+| **Recursos comparidos/ Accesos:**    |                                                                                                 |
 | :------------------------------- | :---------------------------------------------------------------------------------------------- |
 | `Find-DomainUserLocation`        | Encuentra máquinas donde usuarios específicos han iniciado sesión                               |
 | `Find-DomainShare`               | Encuentra recursos compartidos accesibles en máquinas de dominio                                |
 | `Find-InterestingDomainShareFile`| Busca archivos que coincidan con criterios específicos en recursos compartidos                  |
 | `Find-LocalAdminAccess`          | Encuentre máquinas en el dominio local donde el usuario tiene acceso de administrador local     |
 
-| **Funciones de confianza del dominio:** |                                                                                          |
+| **Confianza del dominio:** |                                                                                          |
 | :------------------------------- | :---------------------------------------------------------------------------------------------- |
 | `Get-DomainTrust`                | Devuelve confianzas de dominio para el dominio actual o un dominio específico                   |
 | `Get-ForestTrust`                | Devuelve todos los fideicomisos de bosque para el bosque actual o un bosque especificado       |
