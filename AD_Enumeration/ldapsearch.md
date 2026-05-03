@@ -28,7 +28,7 @@ GPO
 ldapsearch (objectClass=groupPolicyContainer)
 ```
 
-Trust relationship
+Relaciones de Confianza
 ```
 ldapsearch (objectClass=trustedDomain)
 ```
