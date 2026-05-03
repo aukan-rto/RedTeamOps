@@ -31,7 +31,6 @@ Usuarios con SPN configurado:
 ```powershell
 Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName
 ```
-> [!HELP] SPN configurado indica que la cuenta puede estar sujeta a un ataque Kerberoasting.
 
 
 Comprobar configuración PASSWD_NOTREQ:
@@ -96,7 +95,6 @@ Set-DomainUserPassword -Identity blake -AccountPassword (ConvertTo-SecureString 
 
 
 
-
 |                                               |                                                                                                                |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `Export-PowerViewCSV`                         | Agregar resultados a un archivo CSV                                                                            |
@@ -139,3 +137,51 @@ Set-DomainUserPassword -Identity blake -AccountPassword (ConvertTo-SecureString 
 
 | `Get-DomainForeignGroupMember`                | Enumera grupos con usuarios fuera del dominio del grupo y devuelve cada miembro extranjero                     |
 | `Get-DomainTrustMapping`                      | Enumerará todas las confianzas para el dominio actual y cualquier otro visto.                                  |
+
+
+| Función                          | Descripción                                                     |
+| :------------------------------- | :-------------------------------------------------------------- |
+| `Export-PowerViewCSV`            | Agregar resultados a un archivo CSV                             |
+| `ConvertTo-SID`                  | Convertir un nombre de usuario o grupo a su valor SID           |
+| `Get-DomainSPNTicket`            | Solicita el ticket Kerberos para una cuenta SPN                 |
+
+| Funciones de dominio/LDAP         | Descripción                                                     |
+| :------------------------------- | :-------------------------------------------------------------- |
+| `Get-Domain`                     | Objeto AD para el dominio actual                                |
+| `Get-DomainController`           | Lista de controladores de dominio                               |
+| `Get-DomainUser`                 | Lista usuarios u objetos específicos en AD                      |
+| `Get-DomainComputer`             | Lista computadoras u objetos específicos en AD                  |
+| `Get-DomainGroup`                | Lista grupos u objetos específicos en AD                        |
+| `Get-DomainOU`                   | Busca objetos OU específicos en AD                              |
+| `Find-InterestingDomainAcl`      | Encuentra ACLs con derechos de modificación                     |
+| `Get-DomainGroupMember`          | Miembros de un grupo de dominio específico                      |
+| `Get-DomainFileServer`           | Lista de servidores de archivos probables                      |
+| `Get-DomainDFSShare`             | Lista de sistemas de archivos distribuidos (DFS)               |
+
+| Funciones de GPO                 | Descripción                                                     |
+| :------------------------------- | :-------------------------------------------------------------- |
+| `Get-DomainGPO`                  | Todos los GPOs u objetos GPO específicos en AD                 |
+| `Get-DomainPolicy`               | Política de dominio o de controlador por defecto                |
+
+| Funciones por computadora        | Descripción                                                     |
+| :------------------------------- | :-------------------------------------------------------------- |
+| `Get-NetLocalGroup`              | Enumera grupos locales en la máquina                            |
+| `Get-NetLocalGroupMember`        | Miembros de un grupo local específico                           |
+| `Get-NetShare`                   | Recursos compartidos abiertos en la máquina                     |
+| `Get-NetSession`                 | Información de sesión para la máquina                           |
+| `Test-AdminAccess`               | Prueba si se tiene acceso administrativo                        |
+
+| Funciones 'Meta'                 | Descripción                                                     |
+| :------------------------------- | :-------------------------------------------------------------- |
+| `Find-DomainUserLocation`        | Encuentra dónde han iniciado sesión usuarios específicos        |
+| `Find-DomainShare`               | Encuentra recursos compartidos accesibles en el dominio         |
+| `Find-InterestingDomainShareFile`| Busca archivos sensibles en recursos compartidos                |
+| `Find-LocalAdminAccess`          | Busca máquinas donde se tiene acceso de administrador local     |
+
+| Confianza del dominio            | Descripción                                                     |
+| :------------------------------- | :-------------------------------------------------------------- |
+| `Get-DomainTrust`                | Confianzas para el dominio actual o uno específico              |
+| `Get-ForestTrust`                | Todos los fideicomisos de bosque para el bosque actual          |
+| `Get-DomainForeignUser`          | Usuarios en grupos fuera de su dominio                          |
+| `Get-DomainForeignGroupMember`   | Grupos con miembros extranjeros                                 |
+| `Get-DomainTrustMapping`         | Mapa de todas las confianzas del dominio                        |
