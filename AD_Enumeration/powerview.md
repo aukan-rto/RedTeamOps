@@ -31,7 +31,7 @@ Usuarios con SPN configurado:
 ```powershell
 Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName
 ```
-*nota: SPN configurado indica que la cuenta puede estar sujeta a un ataque Kerberoasting.*
+> [!HELP] SPN configurado indica que la cuenta puede estar sujeta a un ataque Kerberoasting.
 
 
 Comprobar configuración PASSWD_NOTREQ:
@@ -64,7 +64,7 @@ Get-NetLocalGroupMember -ComputerName ACADEMY-EA-MS01 -GroupName "Remote Managem
 
 Enumerar GPO :
 ```powershell
-Get-DomainGPO |select displayname
+Get-DomainGPO | select displayname
 ```
 
 
