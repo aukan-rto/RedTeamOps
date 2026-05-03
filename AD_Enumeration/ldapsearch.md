@@ -17,41 +17,52 @@ ldapsearch (samAccountType=805306369) --attributes distinguishedName,dNSHostName
 ```
 
 
-Dominio / GPO / OU
+Dominio / OU
 ```
-ldapsearch (|(objectClass=domain)(objectClass=organizationalUnit)(objectClass=groupPolicyContainer)(objectClass=trustedDomain))
+ldapsearch (|(objectClass=domain)(objectClass=organizationalUnit))
+```
+
+GPO
+```
+ldapsearch (objectClass=groupPolicyContainer)
+```
+
+Trust relationship
+```
+ldapsearch (objectClass=trustedDomain)
 ```
 
 
-## ⚠️ DECISIÓN: ntSecurityDescriptor
-
-- ✔ SOLO si necesitas ACLs
-- ❌ Evítalo por defecto (ruido + tiempo)
+Auditoría de delegación y ACLs (ntsecuritydescriptor)
 ```
 ldapsearch (|(objectClass=domain)(objectClass=organizationalUnit)(objectClass=groupPolicyContainer)) --attributes *,ntsecuritydescriptor
 ```
+> - ⚠️ SOLO si necesitas ACLs
+> - ❌ Evítalo por defecto (ruido + tiempo)
 
-o bien (mas Stealth)
+
+Auditoría de delegación y ACLs específico (ntsecuritydescriptor) (mas Stealth)
 ```
 ldapsearch (objectSid=TARGET_SID) --attributes ntsecuritydescriptor
 ```
 
-## 5. Detectar si GPO tiene filtros WMI
+
+Detectar si GPO tiene filtros WMI
 ```
 ldapsearch (objectClass=groupPolicyContainer) --attributes displayName,gPCWQLFilter
 ```
 
-- `gPCWQLFilter` vacío → GPO aplica a todos los equipos de la OU
-- `gPCWQLFilter` con GUID → GPO tiene un filtro → hay que verificar
+> - `gPCWQLFilter` vacío → GPO aplica a todos los equipos de la OU
+> - `gPCWQLFilter` con GUID → GPO tiene un filtro → hay que verificar
 
-## 6. Consultar el filtro WMI
+Consultar el filtro WMI
 ```
 ldapsearch (objectClass=msWMI-Som) --attributes name,msWMI-Parm2
 ```
-- Solo si un `GUID` fue detectado en el paso anterior.
-- GUID → query WMI → ¿mi target cumple? ¿Esta GPO realmente afecta a mi objetivo?
+> - Solo si un `GUID` fue detectado en el paso anterior.
+> - GUID → query WMI → ¿mi target cumple? ¿Esta GPO realmente afecta a mi objetivo?
 
-## 7 REVISAR GptTmpl.inf
+REVISAR GptTmpl.inf
 
 ```
 ## REVISAR GptTmpl.inf
