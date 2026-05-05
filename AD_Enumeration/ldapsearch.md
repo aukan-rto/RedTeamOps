@@ -53,6 +53,9 @@ ldapsearch "(&(samAccountType=805306369)(msDS-AllowedToActOnBehalfOfOtherIdentit
 
 Estructura y ACLs 
 ```
+ldapsearch (|(samAccountType=805306368)(samAccountType=805306369)(samAccountType=268435456)) --attributes *,ntsecuritydescriptor
+```
+```
 ldapsearch (|(objectClass=domain)(objectClass=organizationalUnit)(objectClass=groupPolicyContainer)) --attributes *,ntsecuritydescriptor
 ```
 > - ⚠️ SOLO si necesitas ACLs
