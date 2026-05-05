@@ -82,11 +82,11 @@ ldapsearch (objectClass=msWMI-Som) --attributes name,msWMI-Name,msWMI-Parm2
 
 
 REVISAR GptTmpl.inf
-```
-## REVISAR GptTmpl.inf
-- Solo si GPO dice Admin / Workstation Admin / RDP / Helpdesk / IT
-- Solo si afecta computadoras
 
-## UBICACIÓN
-\\<DOMAIN>\SYSVOL\<DOMAIN>\Policies\{GUID}\Machine\Microsoft\Windows NT\SecEdit\GptTmpl.inf
-```
+> ## REVISAR GptTmpl.inf
+> - Solo si GPO dice Admin / Workstation Admin / RDP / Helpdesk / IT
+> - Solo si afecta computadoras
+
+> ## UBICACIÓN
+> \\<DOMAIN>\SYSVOL\<DOMAIN>\Policies\{GUID}\Machine\Microsoft\Windows NT\SecEdit\GptTmpl.inf
+
