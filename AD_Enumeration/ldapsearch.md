@@ -68,17 +68,17 @@ GPOs y sus filtros WMI
 ```
 ldapsearch (objectClass=groupPolicyContainer) --attributes displayName,gPCWQLFilter
 ```
-> - `gPCWQLFilter` si vacío → GPO aplica a todos los equipos de la OU
-> - `gPCWQLFilter` con GUID → GPO tiene un filtro → hay que verificar
+>  `gPCWQLFilter` si vacío → GPO aplica a todos los equipos de la OU.
+>  `gPCWQLFilter` con GUID → Hay que verificar a quien aplica.
 
 
 Vinculación de filtros WMI
 ```
-ldapsearch (objectClass=msWMI-Som) --attributes name,msWMI-Parm2
+ldapsearch (objectClass=msWMI-Som) --attributes name,msWMI-Name,msWMI-Parm2
 ```
-> - Solo si un `GUID` fue detectado en el paso anterior.
-> - GUID → query WMI → ¿mi target cumple? ¿Esta GPO realmente afecta a mi objetivo?
-
+> Condición: Solo si se detectó un GUID en gPCWQLFilter.
+> Función: Traduce el GUID a la consulta WMI real.
+> Objetivo: Confirmar si el target cumple los requisitos técnicos para aplicar la GPO.
 
 
 REVISAR GptTmpl.inf
@@ -88,9 +88,5 @@ REVISAR GptTmpl.inf
 - Solo si afecta computadoras
 
 ## UBICACIÓN
-SYSVOL → Policies → {GUID} → GptTmpl.inf
-- Contiene SID del grupo con admin local
-
-## ACCIÓN EN BLOODHOUND
-MERGE (Group)-[:AdminTo]->(Computer)
+\\<DOMAIN>\SYSVOL\<DOMAIN>\Policies\{GUID}\Machine\Microsoft\Windows NT\SecEdit\GptTmpl.inf
 ```
