@@ -81,12 +81,9 @@ ldapsearch (objectClass=msWMI-Som) --attributes name,msWMI-Name,msWMI-Parm2
 > - Objetivo: Confirmar si el target cumple los requisitos técnicos para aplicar la GPO.
 
 
-REVISAR GptTmpl.inf
 
 > ## REVISAR GptTmpl.inf
 > - Solo si GPO dice Admin / Workstation Admin / RDP / Helpdesk / IT
 > - Solo si afecta computadoras
-
-> ## UBICACIÓN
-> \\<DOMAIN>\SYSVOL\<DOMAIN>\Policies\{GUID}\Machine\Microsoft\Windows NT\SecEdit\GptTmpl.inf
+> - UBICACIÓN:  \\<DOMAIN>\SYSVOL\<DOMAIN>\Policies\{GUID}\Machine\Microsoft\Windows NT\SecEdit\GptTmpl.inf
 
