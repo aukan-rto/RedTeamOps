@@ -20,7 +20,7 @@ Get-DomainUser
 
 Usuario Específico:
 ```powershell
-Get-DomainUser -Identity <USER> -Domain inlanefreight.local | Select-Object -Property name,samaccountname,description,memberof,whencreated,pwdlastset,lastlogontimestamp,accountexpires,admincount,userprincipalname,serviceprincipalname,useraccountcontrol
+Get-DomainUser -Identity <USER> -Domain <DOMAIN> | Select-Object -Property name,samaccountname,description,memberof,whencreated,pwdlastset,lastlogontimestamp,accountexpires,admincount,userprincipalname,serviceprincipalname,useraccountcontrol
 ```
 
 
@@ -55,12 +55,12 @@ Get-DomainGroupMember -Identity "Domain Admins" -Recurse
 
 Remote Desktop User Group (RDP):
 ```powershell
-Get-NetLocalGroupMember -ComputerName ACADEMY-EA-MS01 -GroupName "Remote Desktop Users"
+Get-NetLocalGroupMember -ComputerName <HOST_NAME> -GroupName "Remote Desktop Users"
 ```
 
 Remote Management Users Group (WinRM):
 ```powershell
-Get-NetLocalGroupMember -ComputerName ACADEMY-EA-MS01 -GroupName "Remote Management Users"
+Get-NetLocalGroupMember -ComputerName <HOST_NAME> -GroupName "Remote Management Users"
 ```
 
 Enumerar GPO :
@@ -76,7 +76,7 @@ Get-DomainTrustMapping
 
 Grupos de usuarios que no pertenecen al dominio:
 ```powershell
-Get-DomainForeignGroupMember -Domain FREIGHTLOGISTICS.LOCAL
+Get-DomainForeignGroupMember -Domain <DOMAIN>
 ```
 ```powershell
 Convert-SidToName <SID>
@@ -85,7 +85,7 @@ Convert-SidToName <SID>
 
 Prueba de acceso Administrador Local:
 ```powershell
-Test-AdminAccess -ComputerName ACADEMY-EA-MS01
+Test-AdminAccess -ComputerName <HOST_NAME>
 ```
 
 
