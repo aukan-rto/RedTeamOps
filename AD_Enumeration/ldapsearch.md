@@ -3,19 +3,19 @@
 
 Usuarios
 ```
-ldapsearch (&(samAccountType=805306368)(!(objectClass=computer))) --attributes distinguishedName,objectSid,userAccountControl,servicePrincipalName,adminCount,description
+ldapsearch (&(samAccountType=805306368)(!(objectClass=computer))) --attributes sAMAccountName,distinguishedName,objectSid,userAccountControl,servicePrincipalName,adminCount,description
 ```
 
 
 Grupos
 ```
-ldapsearch (objectClass=group) --attributes distinguishedName,objectSid,member,adminCount,description
+ldapsearch (objectClass=group) --attributes sAMAccountName,distinguishedName,objectSid,member,adminCount,description
 ```
 
 
 Computadores
 ```
-ldapsearch (samAccountType=805306369) --attributes distinguishedName,dNSHostName,objectSid,userAccountControl
+ldapsearch (samAccountType=805306369) --attributes sAMAccountName,distinguishedName,dNSHostName,objectSid,userAccountControl
 ```
 
 
