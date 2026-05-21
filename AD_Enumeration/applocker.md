@@ -1,5 +1,4 @@
 # Enumeración de políticas y reglas de AppLocker
-___
 
 Nivel de restricción de seguridad de consola (modo de lenguaje)
 ```powershell
