@@ -50,6 +50,14 @@ Delegación restringida basada en recursos (Resource Based Constrained Delegatio
 ldapsearch "(&(samAccountType=805306369)(msDS-AllowedToActOnBehalfOfOtherIdentity=*))" --attributes samAccountName,msDS-AllowedToActOnBehalfOfOtherIdentity
 ```
 
+Protocol Transition (S4U2self)
+```powershell
+ldapsearch (samaccountname=<ENDPOINT>) --attributes userAccountControl
+```
+```powershell
+[System.Convert]::ToBoolean(<UAC> -band 16777216)
+```
+> - TRUE = Protocol Transition 
 
 Estructura y ACLs 
 ```powershell
